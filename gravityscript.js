@@ -1,6 +1,7 @@
 /*!
  * GravityScript
  * http://josephpcohen.com
+ * http://gravityscript.googlecode.com/
  *
  * Copyright 2011, Joseph Paul Cohen
  * Released under the GPLv3 License
