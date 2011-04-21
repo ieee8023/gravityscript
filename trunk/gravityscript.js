@@ -187,12 +187,12 @@ setTimeout(function(){
 //$("div:empty").addClass("box2d");
 //$("div:empty").css("zIndex", "99");
 	
-//$("div").each(function() { 
-//    if($(this).children().length < 1) {
-//    	$(this).addClass("box2d");
-///    	$(this).css("zIndex", "99");
-//    }
-//});
+$("div").each(function() {
+	if($(this).children().length < 1) {
+    	$(this).addClass("box2d");
+    	$(this).css("zIndex", "99");
+    }
+});
 
 // ieee8023
 
