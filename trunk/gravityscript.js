@@ -9,7 +9,7 @@
  * Based off of Mr. Doobs code for Google Gravity
  */
 
-if (typeof jQuery != 'undefined'){
+if (window.jQuery != 'undefined'){
 	/*!
 	 * jQuery JavaScript Library v1.4.2
 	 * http://jquery.com/
@@ -184,30 +184,49 @@ if (typeof jQuery != 'undefined'){
 
 setTimeout(function(){
 
-//$("div:empty").addClass("box2d");
-//$("div:empty").css("zIndex", "99");
-	
-$("div").each(function() {
-	if($(this).children().length < 1) {
-    	$(this).addClass("box2d");
-    	$(this).css("zIndex", "99");
-    }
-});
+
 
 // ieee8023
 
+grav();
+	
+//$("body").click(function(){
+	
+//	grav();
+//});
 
+
+function grav(){
+
+//$("div:empty").addClass("box2d");
+//$("div:empty").css("zIndex", "99");
+	
+//$("div").each(function() {
+//	if($(this).children().length < 1) {
+//    	$(this).addClass("box2d");
+ //   	$(this).css("zIndex", "99");
+//    }
+//});	
+	
+	
 $("img").addClass("box2d");
 $("img").css("zIndex", "99");
 
-$("embed").addClass("box2d");
-$("embed").css("zIndex", "99");
+$("input").addClass("box2d");
+$("input").css("zIndex", "99");
 
-$("iframe").addClass("box2d");
-$("iframe").css("zIndex", "99");
 
-//$("a").addClass("box2d");
-//$("a").css("zIndex", "99");
+//$("table").addClass("box2d");
+//$("table").css("zIndex", "99");
+
+//$("embed").addClass("box2d");
+//$("embed").css("zIndex", "99");
+
+//$("iframe").addClass("box2d");
+//$("iframe").css("zIndex", "99");
+
+$("a").addClass("box2d");
+$("a").css("zIndex", "99");
 
 $("p").addClass("box2d");
 $("p").css("zIndex", "99");
@@ -218,8 +237,6 @@ $("li").css("zIndex", "99");
 //$("ol").addClass("box2d");
 
 $("body").addClass("gbar");
-
-
 
 /* Based on Alex Arnell's inheritance implementation. */
 var Class = {
@@ -1974,7 +1991,7 @@ function getBrowserDimensions() {
 	return changed;
 }
 
-
+}
 
 },1000);
 //});
