@@ -4,6 +4,8 @@
  * http://gravityscript.googlecode.com/
  *
  * Copyright 2011, Joseph Paul Cohen
+ * Veronica Carrillo-Marquez
+ * Fabio Elia
  * Released under the GPLv3 License
  *
  * Based off of Mr. Doobs code for Google Gravity
@@ -208,22 +210,14 @@ function grav(){
 //    }
 //});	
 	
-	
 $("img").addClass("box2d");
 $("img").css("zIndex", "99");
 
-$("input").addClass("box2d");
-$("input").css("zIndex", "99");
+$("embed").addClass("box2d");
+$("embed").css("zIndex", "99");
 
-
-//$("table").addClass("box2d");
-//$("table").css("zIndex", "99");
-
-//$("embed").addClass("box2d");
-//$("embed").css("zIndex", "99");
-
-//$("iframe").addClass("box2d");
-//$("iframe").css("zIndex", "99");
+$("iframe").addClass("box2d");
+$("iframe").css("zIndex", "99");
 
 $("a").addClass("box2d");
 $("a").css("zIndex", "99");
