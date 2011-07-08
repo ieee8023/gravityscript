@@ -200,37 +200,103 @@ grav();
 
 function grav(){
 
+
+	
+	
 //$("div:empty").addClass("box2d");
 //$("div:empty").css("zIndex", "99");
 	
-//$("div").each(function() {
-//	if($(this).children().length < 1) {
-//    	$(this).addClass("box2d");
- //   	$(this).css("zIndex", "99");
-//    }
-//});	
 	
-$("img").addClass("box2d");
-$("img").css("zIndex", "99");
+$("img").each(function() {
+	if($(this).children().length < 1) {
+		$(this).addClass("box2d");
+		$(this).css("zIndex", "99");
+	    }
+});	
 
-$("embed").addClass("box2d");
-$("embed").css("zIndex", "99");
+$("div").each(function() {
+	if($(this).children().length < 1) {
+    	$(this).addClass("box2d");
+    	$(this).css("position", "relative");
+    	$(this).css("zIndex", "99");
+    }
+});	
 
-$("iframe").addClass("box2d");
-$("iframe").css("zIndex", "99");
+$("span").each(function() {
+	if($(this).children().length < 1) {
+    	$(this).addClass("box2d");
+    	$(this).css("position", "relative");
+    	$(this).css("zIndex", "99");
+    }
+});	
 
-$("a").addClass("box2d");
-$("a").css("zIndex", "99");
+$("a").each(function() {
+	if($(this).children().length < 1) {
+    	$(this).addClass("box2d");
+    	$(this).css("position", "relative");
+    	$(this).css("zIndex", "99");
+    }
+});	
 
-$("p").addClass("box2d");
-$("p").css("zIndex", "99");
+$("li").each(function() {
+	if($(this).children().length < 1) {
+    	$(this).addClass("box2d");
+    	$(this).css("position", "relative");
+    	$(this).css("zIndex", "99");
+    }
+});	
 
-$("li").addClass("box2d");
-$("li").css("zIndex", "99");
+$("ol").each(function() {
+	if($(this).children().length < 1) {
+    	$(this).addClass("box2d");
+    	$(this).css("position", "relative");
+    	$(this).css("zIndex", "99");
+    }
+});	
+
+
+$("p").each(function() {
+	if($(this).children().length < 1) {
+    	$(this).addClass("box2d");
+    	$(this).css("position", "relative");
+    	$(this).css("zIndex", "99");
+    }
+});	
+
+$("embed").each(function() {
+	if($(this).children().length < 1) {
+    	$(this).addClass("box2d");
+    	$(this).css("position", "relative");
+    	$(this).css("zIndex", "99");
+    }
+});	
+
+
+//$("img").addClass("box2d");
+//$("img").css("zIndex", "99");
+
+//$("embed").addClass("box2d");
+//$("embed").css("zIndex", "99");
+
+///$("iframe").addClass("box2d");
+//$("iframe").css("zIndex", "99");
+
+//$("a").addClass("box2d");
+//$("a").css("zIndex", "99");
+
+//$("p").addClass("box2d");
+//$("p").css("zIndex", "99");
+
+//$("li").addClass("box2d");
+//$("li").css("zIndex", "99");
 
 //$("ol").addClass("box2d");
 
 $("body").addClass("gbar");
+
+
+
+
 
 /* Based on Alex Arnell's inheritance implementation. */
 var Class = {
