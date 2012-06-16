@@ -1803,7 +1803,7 @@ function loop() {
 		element.style.MozTransform = rotationStyle;
 		element.style.OTransform = rotationStyle;
 	}
-	
+	setBottoms();
 //	for (i = 0; i < solidelements.length; i++) {
 //
 //		var body = solids[i];
