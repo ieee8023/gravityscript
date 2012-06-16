@@ -235,7 +235,7 @@ $(".grav").each(function() {
 
 //$("ol").addClass("box2d");
 
-//$("body").addClass("gbar");
+$("body").addClass("gbar");
 
 
 
