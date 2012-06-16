@@ -1537,6 +1537,9 @@ function init()
 	
 	bottoms = getElementsByClass("bottom");
 	setBottoms();
+	
+	right = getElementsByClass("right");
+	setRights();
 
 	// Get box2d elements
 	
@@ -1937,17 +1940,27 @@ function setWalls() {
 	wallsSetted = true;
 }
 
-function setBottoms() {
-
-	for (i = 0; i < bottoms.length; i++) {
-
-		var bottom = bottoms[i];
-		
-		bottom.style.top = undefined;
-		bottom.style.bottom = stage[2] = 'px';
-	}
-}
-
+//function setBottoms() {
+//
+//	for (i = 0; i < bottoms.length; i++) {
+//
+//		var bottom = bottoms[i];
+//		
+//		bottom.style.top = undefined;
+//		bottom.style.bottom = stage[2] = 'px';
+//	}
+//}
+//
+//function setRights() {
+//
+//	for (i = 0; i < right.length; i++) {
+//
+//		var right = rights[i];
+//		
+//		right.style.left = undefined;
+//		right.style.right = stage[2] = 'px';
+//	}
+//}
 
 // .. UTILS
 
