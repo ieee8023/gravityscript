@@ -1597,18 +1597,18 @@ function init()
 		bodies[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
 	}
 	
-	elements = getElementsByClass("solid");
+	elements2 = getElementsByClass("solid");
 	
-	for (i = 0; i < elements.length; i++) {
+	for (i = 0; i < elements2.length; i++) {
 
-		var element = elements[i];
+		var element = elements2[i];
 		properties[i] = findPos(element);
 		properties[i][2] = element.offsetWidth;
 		properties[i][3] = element.offsetHeight;
 	}
 	
-	for (i = 0; i < elements.length; i++) {
-		var element = elements[i];
+	for (i = 0; i < elements2.length; i++) {
+		var element = elements2[i];
 		element.style.position = 'absolute';
 		element.style.left = properties[i][0] + 'px';
 		element.style.top = properties[i][1] + 'px';
