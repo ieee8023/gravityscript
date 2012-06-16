@@ -1838,7 +1838,7 @@ function loop() {
 	for (i = 0; i < solidelements.length; i++) {
 
 		var body = soilds[i];
-		var element = elements[i];
+		var element = solidelements[i];
 		
 		element.style.left = (body.m_position0.x - (properties[i][2] >> 1)) + 'px';
 		element.style.top = (body.m_position0.y - (properties[i][3] >> 1)) + 'px';
