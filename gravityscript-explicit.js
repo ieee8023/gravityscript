@@ -1941,7 +1941,7 @@ function setBottoms() {
 
 		var bottom = bottoms[i];
 		
-		bottom.style.bottom = stage[2];
+		bottom.style.bottom = stage[2] = 'px';
 	}
 }
 
