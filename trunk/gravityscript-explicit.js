@@ -1623,7 +1623,7 @@ function init()
 		
 		
 		// like walls   = createBox(world, stage[2] / 2, - wall_thickness, stage[2], wall_thickness);
-		solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, properties[i][3] / 2, true);		
+		solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, solidproperties[i][3] / 2, true);		
 	}
 	
 }
