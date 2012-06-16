@@ -1576,7 +1576,7 @@ function init()
 
 	// Get box2d elements
 	
-	elements = getElementsByClass("box2d");
+	elements = getElementsByClass("grav");
 		
 	for (i = 0; i < elements.length; i++) {
 
