@@ -1495,6 +1495,9 @@ var solids = new Array();
 var properties = new Array();
 var solidproperties = new Array();
 
+var bottoms = new Array();
+var rights = new Array();
+
 var gWebSearch;
 var imFeelingLuckyMode = false;
 var resultBodies = new Array();
@@ -1502,49 +1505,6 @@ var resultBodies = new Array();
 var orientation = { x: 0, y: 1 };
 
 init();
-
-//if (location.search != "")
-//{
-//	var params = location.search.substr(1).split("&")
-//
-//	for (var i = 0; i < params.length; i++)
-//	{
-//		var param = params[i].split("=");
-//
-//		if (param[0] == "q")
-//		{
-//			document.getElementById('q').value = param[1];
-//			run();
-//			break;
-//		}
-//	}
-//}
-
-// GOOGLE API
-
-//function onLoad()
-//{
-//	gWebSearch = new GwebSearch();
-//	gWebSearch.setResultSetSize(GSearch.SMALL_RESULTSET);
-//	gWebSearch.setSearchCompleteCallback(null, onWebSearch);
-//
-//	if (document.getElementById('q').value != '')
-//		search();
-//}
-//
-//function onWebSearch()
-//{
-//	if(imFeelingLuckyMode)
-//	{
-//		location.href = gWebSearch.results[0].unescapedUrl;
-//		return;
-//	}
-//	
-//	for (var i = 0; i < gWebSearch.results.length; i++)
-//		addResult(gWebSearch.results[i]);
-//}
-
-//
 
 function init()
 {
@@ -1574,6 +1534,7 @@ function init()
 	
 	// walls	
 	setWalls();
+	setBottoms();
 
 	// Get box2d elements
 	
@@ -1625,6 +1586,8 @@ function init()
 		// like walls   = createBox(world, stage[2] / 2, - wall_thickness, stage[2], wall_thickness);
 		solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, solidproperties[i][3] / 2, true);		
 	}
+	
+	bottoms = getElementsByClass("bottom");
 	
 }
 
@@ -1812,8 +1775,10 @@ function reset() {
 
 function loop() {
 
-	if (getBrowserDimensions())
+	if (getBrowserDimensions()){
 		setWalls();
+		setBottoms();
+	}
 
 	delta[0] += (0 - delta[0]) * .5;
 	delta[1] += (0 - delta[1]) * .5;
@@ -1969,6 +1934,17 @@ function setWalls() {
 	
 	wallsSetted = true;
 }
+
+function setBottoms() {
+
+	for (i = 0; i < bottoms.length; i++) {
+
+		var bottom = bottoms[i];
+		
+		bottom.style.bottom = stage[2];
+	}
+}
+
 
 // .. UTILS
 
