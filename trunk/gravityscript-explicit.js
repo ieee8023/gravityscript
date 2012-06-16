@@ -1491,7 +1491,7 @@ var timer = 0;
 var elements = new Array();
 var solidelements = new Array();
 var bodies = new Array();
-var soilds = new Array();
+var solids = new Array();
 var properties = new Array();
 
 var gWebSearch;
@@ -1619,7 +1619,7 @@ function init()
 		element.onmouseup = onElementMouseUp;
 		element.onclick = onElementClick;
 		
-		soilds[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
+		solids[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
 	}
 	
 }
@@ -1835,20 +1835,20 @@ function loop() {
 		element.style.OTransform = rotationStyle;
 	}
 	
-	for (i = 0; i < solidelements.length; i++) {
-
-		var body = soilds[i];
-		var element = solidelements[i];
-		
-		element.style.left = (body.m_position0.x - (properties[i][2] >> 1)) + 'px';
-		element.style.top = (body.m_position0.y - (properties[i][3] >> 1)) + 'px';
-
-		var rotationStyle = 'rotate(' + (body.m_rotation0 * 57.2957795) + 'deg)';
-
-		element.style.WebkitTransform = rotationStyle;
-		element.style.MozTransform = rotationStyle;
-		element.style.OTransform = rotationStyle;
-	}
+//	for (i = 0; i < solidelements.length; i++) {
+//
+//		var body = solids[i];
+//		var element = solidelements[i];
+//		
+//		element.style.left = (body.m_position0.x - (properties[i][2] >> 1)) + 'px';
+//		element.style.top = (body.m_position0.y - (properties[i][3] >> 1)) + 'px';
+//
+//		var rotationStyle = 'rotate(' + (body.m_rotation0 * 57.2957795) + 'deg)';
+//
+//		element.style.WebkitTransform = rotationStyle;
+//		element.style.MozTransform = rotationStyle;
+//		element.style.OTransform = rotationStyle;
+//	}
 }
 
 
