@@ -207,7 +207,7 @@ function grav(){
 //$("div:empty").css("zIndex", "99");
 	
 	
-$(".grav").each(function() {
+$("grav").each(function() {
 	if($(this).children().length < 1) {
 		$(this).addClass("box2d");
 		$(this).css("zIndex", "99");
@@ -1500,46 +1500,46 @@ var orientation = { x: 0, y: 1 };
 
 init();
 
-if (location.search != "")
-{
-	var params = location.search.substr(1).split("&")
-
-	for (var i = 0; i < params.length; i++)
-	{
-		var param = params[i].split("=");
-
-		if (param[0] == "q")
-		{
-			document.getElementById('q').value = param[1];
-			run();
-			break;
-		}
-	}
-}
+//if (location.search != "")
+//{
+//	var params = location.search.substr(1).split("&")
+//
+//	for (var i = 0; i < params.length; i++)
+//	{
+//		var param = params[i].split("=");
+//
+//		if (param[0] == "q")
+//		{
+//			document.getElementById('q').value = param[1];
+//			run();
+//			break;
+//		}
+//	}
+//}
 
 // GOOGLE API
 
-function onLoad()
-{
-	gWebSearch = new GwebSearch();
-	gWebSearch.setResultSetSize(GSearch.SMALL_RESULTSET);
-	gWebSearch.setSearchCompleteCallback(null, onWebSearch);
-
-	if (document.getElementById('q').value != '')
-		search();
-}
-
-function onWebSearch()
-{
-	if(imFeelingLuckyMode)
-	{
-		location.href = gWebSearch.results[0].unescapedUrl;
-		return;
-	}
-	
-	for (var i = 0; i < gWebSearch.results.length; i++)
-		addResult(gWebSearch.results[i]);
-}
+//function onLoad()
+//{
+//	gWebSearch = new GwebSearch();
+//	gWebSearch.setResultSetSize(GSearch.SMALL_RESULTSET);
+//	gWebSearch.setSearchCompleteCallback(null, onWebSearch);
+//
+//	if (document.getElementById('q').value != '')
+//		search();
+//}
+//
+//function onWebSearch()
+//{
+//	if(imFeelingLuckyMode)
+//	{
+//		location.href = gWebSearch.results[0].unescapedUrl;
+//		return;
+//	}
+//	
+//	for (var i = 0; i < gWebSearch.results.length; i++)
+//		addResult(gWebSearch.results[i]);
+//}
 
 //
 
@@ -1596,6 +1596,30 @@ function init()
 		
 		bodies[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
 	}
+	
+	elements = getElementsByClass("solid");
+	
+	for (i = 0; i < elements.length; i++) {
+
+		var element = elements[i];
+		properties[i] = findPos(element);
+		properties[i][2] = element.offsetWidth;
+		properties[i][3] = element.offsetHeight;
+	}
+	
+	for (i = 0; i < elements.length; i++) {
+		var element = elements[i];
+		element.style.position = 'absolute';
+		element.style.left = properties[i][0] + 'px';
+		element.style.top = properties[i][1] + 'px';
+		// element.style.backgroundColor = '#ffff00';
+		element.onmousedown = onElementMouseDown;
+		element.onmouseup = onElementMouseUp;
+		element.onclick = onElementClick;
+		
+		bodies[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
+	}
+	
 }
 
 function run() {
