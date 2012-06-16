@@ -1495,9 +1495,6 @@ var solids = new Array();
 var properties = new Array();
 var solidproperties = new Array();
 
-var bottoms = new Array();
-var rights = new Array();
-
 var gWebSearch;
 var imFeelingLuckyMode = false;
 var resultBodies = new Array();
@@ -1534,12 +1531,6 @@ function init()
 	
 	// walls	
 	setWalls();
-	
-	//bottoms = getElementsByClass("bottom");
-	//setBottoms();
-	
-	//right = getElementsByClass("right");
-	//setRights();
 
 	// Get box2d elements
 	
@@ -1808,21 +1799,6 @@ function loop() {
 		element.style.MozTransform = rotationStyle;
 		element.style.OTransform = rotationStyle;
 	}
-	
-//	for (i = 0; i < solidelements.length; i++) {
-//
-//		var body = solids[i];
-//		var element = solidelements[i];
-//		
-//		element.style.left = (body.m_position0.x - (solidproperties[i][2] >> 1)) + 'px';
-//		element.style.top = (body.m_position0.y - (solidproperties[i][3] >> 1)) + 'px';
-//
-//		var rotationStyle = 'rotate(' + (body.m_rotation0 * 57.2957795) + 'deg)';
-//
-//		element.style.WebkitTransform = rotationStyle;
-//		element.style.MozTransform = rotationStyle;
-//		element.style.OTransform = rotationStyle;
-//	}
 }
 
 
@@ -1939,28 +1915,6 @@ function setWalls() {
 	
 	wallsSetted = true;
 }
-
-//function setBottoms() {
-//
-//	for (i = 0; i < bottoms.length; i++) {
-//
-//		var bottom = bottoms[i];
-//		
-//		bottom.style.top = undefined;
-//		bottom.style.bottom = stage[2] = 'px';
-//	}
-//}
-//
-//function setRights() {
-//
-//	for (i = 0; i < right.length; i++) {
-//
-//		var right = rights[i];
-//		
-//		right.style.left = undefined;
-//		right.style.right = stage[2] = 'px';
-//	}
-//}
 
 // .. UTILS
 
