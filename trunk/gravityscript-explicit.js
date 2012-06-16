@@ -1535,11 +1535,11 @@ function init()
 	// walls	
 	setWalls();
 	
-	bottoms = getElementsByClass("bottom");
-	setBottoms();
+	//bottoms = getElementsByClass("bottom");
+	//setBottoms();
 	
-	right = getElementsByClass("right");
-	setRights();
+	//right = getElementsByClass("right");
+	//setRights();
 
 	// Get box2d elements
 	
@@ -1782,7 +1782,7 @@ function loop() {
 
 	if (getBrowserDimensions()){
 		setWalls();
-		setBottoms();
+		//setBottoms();
 	}
 
 	delta[0] += (0 - delta[0]) * .5;
