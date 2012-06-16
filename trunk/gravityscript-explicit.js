@@ -1534,6 +1534,8 @@ function init()
 	
 	// walls	
 	setWalls();
+	
+	bottoms = getElementsByClass("bottom");
 	setBottoms();
 
 	// Get box2d elements
@@ -1587,7 +1589,7 @@ function init()
 		solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, solidproperties[i][3] / 2, true);		
 	}
 	
-	bottoms = getElementsByClass("bottom");
+	
 	
 }
 
@@ -1803,7 +1805,7 @@ function loop() {
 		element.style.MozTransform = rotationStyle;
 		element.style.OTransform = rotationStyle;
 	}
-	setBottoms();
+	
 //	for (i = 0; i < solidelements.length; i++) {
 //
 //		var body = solids[i];
