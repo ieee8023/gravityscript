@@ -1489,9 +1489,9 @@ var mouseOnClick = new Array();
 var timer = 0;
 
 var elements = new Array();
-var solidelements = new Array();
+//var solidelements = new Array();
 var bodies = new Array();
-var solids = new Array();
+//var solids = new Array();
 var properties = new Array();
 
 var gWebSearch;
