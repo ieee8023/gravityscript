@@ -1599,28 +1599,28 @@ function init()
 		bodies[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
 	}
 	
-	solidelements = getElementsByClass("solid");
-	
-	for (i = 0; i < solidelements.length; i++) {
-
-		var element = solidelements[i];
-		properties[i] = findPos(element);
-		properties[i][2] = element.offsetWidth;
-		properties[i][3] = element.offsetHeight;
-	}
-	
-	for (i = 0; i < solidelements.length; i++) {
-		var element = solidelements[i];
-		element.style.position = 'absolute';
-		element.style.left = properties[i][0] + 'px';
-		element.style.top = properties[i][1] + 'px';
-		// element.style.backgroundColor = '#ffff00';
-		element.onmousedown = onElementMouseDown;
-		element.onmouseup = onElementMouseUp;
-		element.onclick = onElementClick;
-		
-		solids[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
-	}
+//	solidelements = getElementsByClass("solid");
+//	
+//	for (i = 0; i < solidelements.length; i++) {
+//
+//		var element = solidelements[i];
+//		properties[i] = findPos(element);
+//		properties[i][2] = element.offsetWidth;
+//		properties[i][3] = element.offsetHeight;
+//	}
+//	
+//	for (i = 0; i < solidelements.length; i++) {
+//		var element = solidelements[i];
+//		element.style.position = 'absolute';
+//		element.style.left = properties[i][0] + 'px';
+//		element.style.top = properties[i][1] + 'px';
+//		// element.style.backgroundColor = '#ffff00';
+//		element.onmousedown = onElementMouseDown;
+//		element.onmouseup = onElementMouseUp;
+//		element.onclick = onElementClick;
+//		
+//		solids[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
+//	}
 	
 }
 
