@@ -1493,6 +1493,7 @@ var solidelements = new Array();
 var bodies = new Array();
 var solids = new Array();
 var properties = new Array();
+var solidproperties = new Array();
 
 var gWebSearch;
 var imFeelingLuckyMode = false;
@@ -1605,16 +1606,16 @@ function init()
 	for (i = 0; i < solidelements.length; i++) {
 
 		var element = solidelements[i];
-		properties[i] = findPos(element);
-		properties[i][2] = element.offsetWidth;
-		properties[i][3] = element.offsetHeight;
+		solidproperties[i] = findPos(element);
+		solidproperties[i][2] = element.offsetWidth;
+		solidproperties[i][3] = element.offsetHeight;
 	}
 	
 	for (i = 0; i < solidelements.length; i++) {
 		var element = solidelements[i];
 		element.style.position = 'absolute';
-		element.style.left = properties[i][0] + 'px';
-		element.style.top = properties[i][1] + 'px';
+		element.style.left = solidproperties[i][0] + 'px';
+		element.style.top = solidproperties[i][1] + 'px';
 		// element.style.backgroundColor = '#ffff00';
 		element.onmousedown = onElementMouseDown;
 		element.onmouseup = onElementMouseUp;
@@ -1622,7 +1623,7 @@ function init()
 		
 		
 		// like walls   = createBox(world, stage[2] / 2, - wall_thickness, stage[2], wall_thickness);
-		solids[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, true);		
+		solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, properties[i][3] / 2, true);		
 	}
 	
 }
@@ -1838,20 +1839,20 @@ function loop() {
 		element.style.OTransform = rotationStyle;
 	}
 	
-	for (i = 0; i < solidelements.length; i++) {
-
-		var body = solids[i];
-		var element = solidelements[i];
-		
-		element.style.left = (body.m_position0.x - (properties[i][2] >> 1)) + 'px';
-		element.style.top = (body.m_position0.y - (properties[i][3] >> 1)) + 'px';
-
-		var rotationStyle = 'rotate(' + (body.m_rotation0 * 57.2957795) + 'deg)';
-
-		element.style.WebkitTransform = rotationStyle;
-		element.style.MozTransform = rotationStyle;
-		element.style.OTransform = rotationStyle;
-	}
+//	for (i = 0; i < solidelements.length; i++) {
+//
+//		var body = solids[i];
+//		var element = solidelements[i];
+//		
+//		element.style.left = (body.m_position0.x - (solidproperties[i][2] >> 1)) + 'px';
+//		element.style.top = (body.m_position0.y - (solidproperties[i][3] >> 1)) + 'px';
+//
+//		var rotationStyle = 'rotate(' + (body.m_rotation0 * 57.2957795) + 'deg)';
+//
+//		element.style.WebkitTransform = rotationStyle;
+//		element.style.MozTransform = rotationStyle;
+//		element.style.OTransform = rotationStyle;
+//	}
 }
 
 
