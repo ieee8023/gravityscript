@@ -1601,6 +1601,7 @@ function init()
 	
 	solidelements = getElementsByClass("solid");
 	
+	
 	for (i = 0; i < solidelements.length; i++) {
 
 		var element = solidelements[i];
@@ -1619,7 +1620,9 @@ function init()
 		element.onmouseup = onElementMouseUp;
 		element.onclick = onElementClick;
 		
-		solids[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false);		
+		
+		// like walls   = createBox(world, stage[2] / 2, - wall_thickness, stage[2], wall_thickness);
+		solids[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, true);		
 	}
 	
 }
