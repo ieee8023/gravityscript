@@ -1531,11 +1531,16 @@ function init()
 	
 	// walls	
 	setWalls();
-
-	// Get box2d elements
+	
+	
+	$("grav").each(function() {
+		$(this).css("position", "absolute");
+	});	
+	
+	
 	
 	elements = getElementsByClass("grav");
-		
+
 	for (i = 0; i < elements.length; i++) {
 
 		var element = elements[i];
