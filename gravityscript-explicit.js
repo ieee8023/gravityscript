@@ -207,12 +207,12 @@ function grav(){
 //$("div:empty").css("zIndex", "99");
 	
 	
-$("grav").each(function() {
-	if($(this).children().length < 1) {
-		$(this).addClass("box2d");
-		$(this).css("zIndex", "99");
-	    }
-});	
+//$("grav").each(function() {
+//	if($(this).children().length < 1) {
+//		$(this).addClass("box2d");
+//		$(this).css("zIndex", "99");
+//	    }
+//});	
 
 
 //$("img").addClass("box2d");
@@ -1549,7 +1549,7 @@ function init()
 		element.style.position = 'absolute';
 		element.style.left = properties[i][0] + 'px';
 		element.style.top = properties[i][1] + 'px';
-		// element.style.backgroundColor = '#ffff00';
+		//element.style.backgroundColor = '#ffff00';
 		element.onmousedown = onElementMouseDown;
 		element.onmouseup = onElementMouseUp;
 		element.onclick = onElementClick;
