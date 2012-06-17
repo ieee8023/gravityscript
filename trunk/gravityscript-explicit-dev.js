@@ -1812,7 +1812,7 @@ function createBox(world, x, y, width, height, fixed, element) {
 	var boxSd = new b2BoxDef();
 
 	if (!fixed)
-		boxSd.density = 0.5;
+		boxSd.density = 1.0;
 
 	boxSd.extents.Set(width, height);
 
