@@ -1524,7 +1524,7 @@ function init()
 	// init box2d
 	
 	worldAABB = new b2AABB();
-	worldAABB.minVertex.Set(-1, -1);
+	worldAABB.minVertex.Set(-200, -200);
 	worldAABB.maxVertex.Set( screen.width + 200, screen.height + 200);
 
 	world = new b2World(worldAABB, new b2Vec2(0, 0), true);
@@ -1812,7 +1812,7 @@ function createBox(world, x, y, width, height, fixed, element) {
 	var boxSd = new b2BoxDef();
 
 	if (!fixed)
-		boxSd.density = 1.0;
+		boxSd.density = 10.0;
 
 	boxSd.extents.Set(width, height);
 
