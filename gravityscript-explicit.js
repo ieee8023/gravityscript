@@ -1506,14 +1506,6 @@ init();
 function init()
 {
 	canvas = document.getElementById('canvas');
-	
-	document.onmousedown = onDocumentMouseDown;
-	document.onmouseup = onDocumentMouseUp;
-	document.onmousemove = onDocumentMouseMove;
-	document.ondblclick = onDocumentDoubleClick;
-	
-	document.onkeypress = onDocumentKeyPress;
-
 
 	document.addEventListener('touchstart', onDocumentTouchStart, false);
 	document.addEventListener('touchmove', onDocumentTouchMove, false);
@@ -1593,39 +1585,35 @@ function run() {
 	setInterval(loop, 25);	
 }
 
-//
+$(document).ready(function(){
 
-function onDocumentMouseDown() {
+	$(document).mousedown(function() {
+	  	isMouseDown = true;
+		return false;
+	});
 
-	isMouseDown = true;
-	return false;
-}
+	$(document).mouseup(function() {
+		isMouseDown = false;
+		return false;
+	});
 
-function onDocumentMouseUp() {
+	$(document).mousemove(function(e) {
 
-	isMouseDown = false;
-	return false;
-}
+		if (!isRunning)
+			run();
 
-function onDocumentMouseMove() {
+		mouseX = e.pageX;
+		mouseY = e.pageY;
+	});
 
-	if (!isRunning)
-		run();
+	$(document).keypress(function(e) {
 
-	mouseX = window.event.clientX;
-	mouseY = window.event.clientY;
-}
+		if (e.charCode == 13)
+			search();
+	});
+});
 
-function onDocumentDoubleClick() {
 
-	reset();
-}
-
-function onDocumentKeyPress(event) {
-
-	if (event.charCode == 13)
-		search();
-}
 
 function onDocumentTouchStart( event ) {
 
