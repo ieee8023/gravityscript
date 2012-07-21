@@ -1573,17 +1573,17 @@ function run() {
 
 $(document).ready(function(){
 
-	$(document).bind('vmousedown',function() {
+	$(document).on('vmousedown',function() {
 	  	isMouseDown = true;
 		return false;
 	});
 
-	$(document).bind('vmouseup',function() {
+	$(document).on('vmouseup',function() {
 		isMouseDown = false;
 		return false;
 	});
 
-	$(document).bind('vmousemove',function(e) {
+	$(document).on('vmousemove',function(e) {
 
 		if (!isRunning)
 			run();
