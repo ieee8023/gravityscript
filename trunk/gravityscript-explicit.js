@@ -175,66 +175,21 @@ if (window.jQuery != 'undefined'){
 
 
 
-
-
-//$("div").addClass("box2d");
-
-//$(".body").addClass("ownable");
-//$(function(){
-
-//$("body").mousemove(function(){
-
 setTimeout(function(){
-
 
 
 // ieee8023
 
 grav();
-	
-//$("body").click(function(){
-	
-//	grav();
-//});
 
 
 function grav(){
 
 
-	
-	
-//$("div:empty").addClass("box2d");
-//$("div:empty").css("zIndex", "99");
-	
-	
-//$("grav").each(function() {
-//	if($(this).children().length < 1) {
-//		$(this).addClass("box2d");
-//		$(this).css("zIndex", "99");
-//	    }
-//});	
 
 
-//$("img").addClass("box2d");
-//$("img").css("zIndex", "99");
-
-//$("embed").addClass("box2d");
-//$("embed").css("zIndex", "99");
-
-///$("iframe").addClass("box2d");
-//$("iframe").css("zIndex", "99");
-
-//$("a").addClass("box2d");
-//$("a").css("zIndex", "99");
-
-//$("p").addClass("box2d");
-//$("p").css("zIndex", "99");
-
-//$("li").addClass("box2d");
-//$("li").css("zIndex", "99");
-
-//$("ol").addClass("box2d");
-
+$("html").css("overflow", "hidden");
+$("body").css("overflow", "hidden");
 $("body").addClass("gbar");
 
 

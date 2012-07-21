@@ -205,7 +205,9 @@ f.load(a.mobile.silentScroll);a.support.cssPointerEvents||a(k).delegate(".ui-dis
 
 
 
-
+//ieee8023
+$("html").css("overflow", "hidden");
+$("body").css("overflow", "hidden");
 $("body").addClass("gbar");
 
 
@@ -1626,69 +1628,10 @@ $(function(){
 		
 		if (mouseOnClick[0] > window.event.clientX + range || mouseOnClick[0] < window.event.clientX - range && mouseOnClick[1] > window.event.clientY + range || mouseOnClick[1] < window.event.clientY - range)
 			return false;
-		
-		if (this == document.getElementById('btnG')) search();
-		if (this == document.getElementById('btnI')) imFeelingLucky();
-		if (this == document.getElementById('q')) document.f.q.focus();
 	}
 	
 	// API STUFF
 	
-	function search() {
-	
-		if (!isRunning)
-			run();
-		
-		onDocumentDoubleClick(); // clean
-		gWebSearch.execute(document.getElementById('q').value);
-		return false;
-	}
-	
-	function imFeelingLucky() {
-	
-		imFeelingLuckyMode = true;
-		gWebSearch.execute(document.getElementById('q').value);
-		return false;	
-	}
-	
-	function addResult(data) {
-	
-		var element = document.createElement('div');
-		element.innerHTML = '<div><h3 class=r><a href="' + data.unescapedUrl + '" class=l onmousedown="return clk(this.href,\'\',\'\',\'res\',\'1\',\'&amp;sig2=3Ti89FTuSYfE6a-5k1jjKQ\')">' + data.title + '</a></h3><span style=display:inline-block><button class=w10 title="Promote"></button><button class=w20 title="Remove"></button></span><div class="s">' + data.content + '<br><cite>' + data.visibleUrl + '</cite></div>';
-		
-		canvas.appendChild(element);
-		properties.push([Math.random() * (window.innerWidth / 2),-200,600,element.offsetHeight]);
-		
-		var i = properties.length - 1;
-	
-		element.style.position = 'absolute';
-		element.style.left = 0 + 'px';
-		element.style.top = -100 + 'px';
-		element.style.backgroundColor = '#ffffff';
-		element.onmousedown = onElementMouseDown;
-		element.onmouseup = onElementMouseUp;
-		element.onclick = onElementClick;
-	
-		elements[i] = element;
-	
-		resultBodies.push( bodies[i] = createBox(world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false, element) );
-		
-	}
-	
-	function reset() {
-	
-		for (i = 0; i < resultBodies.length; i++) {
-	
-			var body = resultBodies[i]
-			canvas.removeChild( body.GetUserData().element );
-			world.DestroyBody(body);
-			body = null;
-		}
-		
-		resultBodies = new Array();
-	}
-	
-	//
 	
 	function loop() {
 	
