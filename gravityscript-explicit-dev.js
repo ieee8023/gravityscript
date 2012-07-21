@@ -1497,10 +1497,6 @@ function init()
 {
 	canvas = document.getElementById('canvas');
 
-	document.addEventListener('touchstart', onDocumentTouchStart, false);
-	document.addEventListener('touchmove', onDocumentTouchMove, false);
-	document.addEventListener('touchend', onDocumentTouchEnd, false);
-
 	window.addEventListener( 'deviceorientation', onWindowDeviceOrientation, false );
 
 	// init box2d
