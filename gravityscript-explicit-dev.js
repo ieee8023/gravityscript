@@ -1605,53 +1605,6 @@ $(document).ready(function(){
 
 
 
-function onDocumentTouchStart( event ) {
-
-	if(event.touches.length == 1) {
-
-		event.preventDefault();
-
-		if (!isRunning)
-			run();
-
-		// Faking double click for touch devices
-
-		var now = new Date().getTime();
-
-		if (now - timeOfLastTouch  < 250) {
-
-			reset();
-			return;
-		}
-
-		timeOfLastTouch = now;
-
-		mouseX = event.touches[0].pageX;
-		mouseY = event.touches[0].pageY;
-		isMouseDown = true;
-	}
-}
-
-function onDocumentTouchMove( event ) {
-
-	if(event.touches.length == 1) {
-
-		event.preventDefault();
-
-		mouseX = event.touches[0].pageX;
-		mouseY = event.touches[0].pageY;
-	}
-}
-
-function onDocumentTouchEnd( event ) {
-
-	if(event.touches.length == 0) {
-
-		event.preventDefault();
-		isMouseDown = false;
-	}
-}
-
 function onWindowDeviceOrientation( event ) {
 
 	if ( event.beta ) {
