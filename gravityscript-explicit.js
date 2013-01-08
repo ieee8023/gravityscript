@@ -1918,8 +1918,9 @@ setTimeout(function(){
 			////////////////////////////////////////
 			// do stuff here so everything has gravity
 
-$("html").css("overflow", "hidden");
-$("body").css("overflow", "hidden");
+			$("html").css("overflow", "hidden");
+			$("body").css("overflow", "hidden");
+			$('.grav').css('cursor', 'move');
 	
 
 			
