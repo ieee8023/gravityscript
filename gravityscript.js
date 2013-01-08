@@ -1871,11 +1871,12 @@ setTimeout(function(){
 			
 			function grav(){
 			
-						/////////////////////////////////////////
+			/////////////////////////////////////////
 			////////////////////////////////////////
 			// do stuff here so everything has gravity
 
-
+$("html").css("overflow", "hidden");
+$("body").css("overflow", "hidden");
 	
 	
 $("img").each(function() {
