@@ -1660,7 +1660,7 @@ setTimeout(function(){
 					if ( event.beta ) {
 		
 						gravity.x = Math.sin( event.gamma * Math.PI / 180 );
-						gravity.y = event.beta * Math.PI / 180 ;
+						gravity.y = ( Math.PI / 4 ) + event.beta * Math.PI / 180 ;
 		
 					}
 				}
