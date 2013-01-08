@@ -1500,6 +1500,7 @@ setTimeout(function(){
 					element.style.left = properties[i][0] + 'px';
 					element.style.top = properties[i][1] + 'px';
 					element.style.width = properties[i][2] + 'px';
+					element.style.height = properties[i][3] + 'px';
 					element.addEventListener( 'mousedown', onElementMouseDown, false );
 					element.addEventListener( 'mouseup', onElementMouseUp, false );
 					element.addEventListener( 'click', onElementClick, false );
@@ -1534,6 +1535,7 @@ setTimeout(function(){
 					element.style.left = solidproperties[i][0] + 'px';
 					element.style.top = solidproperties[i][1] + 'px';
 					element.style.width = solidproperties[i][2] + 'px';
+					element.style.height = solidproperties[i][3] + 'px';
 					element.addEventListener( 'mousedown', onElementMouseDown, false );
 					element.addEventListener( 'mouseup', onElementMouseUp, false );
 					element.addEventListener( 'click', onElementClick, false );
@@ -1553,7 +1555,6 @@ setTimeout(function(){
 				}
 				
 				
-
 			}
 
 			function run() {
@@ -1866,12 +1867,13 @@ setTimeout(function(){
 				var width = element.offsetWidth;
 				var height = element.offsetHeight;
 
-				do {
+					do {
+	
+						x += element.offsetLeft;
+						y += element.offsetTop;
+	
+					} while ( element = element.offsetParent );
 
-					x += element.offsetLeft;
-					y += element.offsetTop;
-
-				} while ( element = element.offsetParent );
 
 				return [ x, y, width, height ];
 			}
@@ -1919,70 +1921,7 @@ setTimeout(function(){
 $("html").css("overflow", "hidden");
 $("body").css("overflow", "hidden");
 	
-	
-$("img").each(function() {
-	if($(this).children().length < 1) {
-		$(this).addClass("box2d");
-		$(this).css("zIndex", "99");
-	    }
-});	
 
-$("div").each(function() {
-	if($(this).children().length < 1) {
-    	$(this).addClass("box2d");
-    	$(this).css("position", "relative");
-    	$(this).css("zIndex", "99");
-    }
-});	
-
-$("span").each(function() {
-	if($(this).children().length < 1) {
-    	$(this).addClass("box2d");
-    	$(this).css("position", "relative");
-    	$(this).css("zIndex", "99");
-    }
-});	
-
-$("a").each(function() {
-	if($(this).children().length < 1) {
-    	$(this).addClass("box2d");
-    	$(this).css("position", "relative");
-    	$(this).css("zIndex", "99");
-    }
-});	
-
-$("li").each(function() {
-	if($(this).children().length < 1) {
-    	$(this).addClass("box2d");
-    	$(this).css("position", "relative");
-    	$(this).css("zIndex", "99");
-    }
-});	
-
-$("ol").each(function() {
-	if($(this).children().length < 1) {
-    	$(this).addClass("box2d");
-    	$(this).css("position", "relative");
-    	$(this).css("zIndex", "99");
-    }
-});	
-
-
-$("p").each(function() {
-	if($(this).children().length < 1) {
-    	$(this).addClass("box2d");
-    	$(this).css("position", "relative");
-    	$(this).css("zIndex", "99");
-    }
-});	
-
-$("embed").each(function() {
-	if($(this).children().length < 1) {
-    	$(this).addClass("box2d");
-    	$(this).css("position", "relative");
-    	$(this).css("zIndex", "99");
-    }
-});	
 			
 			}
 			
