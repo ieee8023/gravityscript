@@ -1632,6 +1632,9 @@ setTimeout(function(){
 
 			function onWindowDeviceOrientation( event ) {
 
+				if (Math.abs(window.orientation) == 90)
+					alert("landscape");
+
 				if ( event.beta ) {
 
 					gravity.x = Math.sin( event.gamma * Math.PI / 180 );
