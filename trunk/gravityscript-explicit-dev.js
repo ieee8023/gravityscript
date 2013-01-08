@@ -1523,7 +1523,7 @@ setTimeout(function(){
 				
 				for ( var i = 0; i < solidelements.length; i ++ ) {
 
-					properties[i] = getElementProperties( solidelements[i] );
+					solidproperties[i] = getElementProperties( solidelements[i] );
 
 				}
 
@@ -1531,9 +1531,9 @@ setTimeout(function(){
 
 					var element = solidelements[ i ];
 					element.style.position = 'absolute';
-					element.style.left = properties[i][0] + 'px';
-					element.style.top = properties[i][1] + 'px';
-					element.style.width = properties[i][2] + 'px';
+					element.style.left = solidproperties[i][0] + 'px';
+					element.style.top = solidproperties[i][1] + 'px';
+					element.style.width = solidproperties[i][2] + 'px';
 					element.addEventListener( 'mousedown', onElementMouseDown, false );
 					element.addEventListener( 'mouseup', onElementMouseUp, false );
 					element.addEventListener( 'click', onElementClick, false );
@@ -1632,14 +1632,24 @@ setTimeout(function(){
 
 			function onWindowDeviceOrientation( event ) {
 
-				if (Math.abs(window.orientation) == 90)
-					alert("landscape");
-
+				if ($(window).width() > $(window).height()){
+					//landscape
 				if ( event.beta ) {
+	
+						gravity.y = -1 * (Math.sin( event.gamma * Math.PI / 180 ));
+						gravity.x = (event.beta * Math.PI / 180 );
+	
+					}
+				
 
-					gravity.x = Math.sin( event.gamma * Math.PI / 180 );
-					gravity.y = Math.sin( ( Math.PI / 4 ) + event.beta * Math.PI / 180 );
-
+				}else{
+					//portrait
+					if ( event.beta ) {
+	
+						gravity.x = Math.sin( event.gamma * Math.PI / 180 );
+						gravity.y = event.beta * Math.PI / 180 ;
+	
+					}
 				}
 
 			}
@@ -1902,11 +1912,12 @@ setTimeout(function(){
 			
 			function grav(){
 			
-						/////////////////////////////////////////
+			/////////////////////////////////////////
 			////////////////////////////////////////
 			// do stuff here so everything has gravity
 
-
+$("html").css("overflow", "hidden");
+$("body").css("overflow", "hidden");
 	
 	
 $("img").each(function() {
