@@ -1589,14 +1589,26 @@ setTimeout(function(){
 				}
 
 			}
-
 			function onWindowDeviceOrientation( event ) {
 
+				if ($(window).width() > $(window).height()){
+					//landscape
 				if ( event.beta ) {
+	
+						gravity.y = -1 * (Math.sin( event.gamma * Math.PI / 180 ));
+						gravity.x = (event.beta * Math.PI / 180 );
+	
+					}
+				
 
-					gravity.x = Math.sin( event.gamma * Math.PI / 180 );
-					gravity.y = Math.sin( ( Math.PI / 4 ) + event.beta * Math.PI / 180 );
-
+				}else{
+					//portrait
+					if ( event.beta ) {
+	
+						gravity.x = Math.sin( event.gamma * Math.PI / 180 );
+						gravity.y = event.beta * Math.PI / 180 ;
+	
+					}
 				}
 
 			}
