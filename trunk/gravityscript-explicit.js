@@ -1633,25 +1633,38 @@ setTimeout(function(){
 
 			function onWindowDeviceOrientation( event ) {
 
-				if ($(window).width() > $(window).height()){
-					//landscape
-				if ( event.beta ) {
-	
-						gravity.y = -1 * (Math.sin( event.gamma * Math.PI / 180 ));
-						gravity.x = (event.beta * Math.PI / 180 );
-	
-					}
-				
+				// if mobile
+				if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
 
-				}else{
-					//portrait
+					if ($(window).width() > $(window).height()){
+						//landscape
 					if ( event.beta ) {
+		
+							gravity.y = -1 * (Math.sin( event.gamma * Math.PI / 180 ));
+							gravity.x = (event.beta * Math.PI / 180 );
+		
+						}
+					
 	
+					}else{
+						//portrait
+						if ( event.beta ) {
+		
+							gravity.x = Math.sin( event.gamma * Math.PI / 180 );
+							gravity.y = event.beta * Math.PI / 180 ;
+		
+						}
+					}
+				}else{
+				
+					if ( event.beta ) {
+		
 						gravity.x = Math.sin( event.gamma * Math.PI / 180 );
 						gravity.y = event.beta * Math.PI / 180 ;
-	
+		
 					}
 				}
+				
 
 			}
 
