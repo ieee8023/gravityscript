@@ -1866,6 +1866,9 @@ setTimeout(function(){
 		    //
 		    this.ShouldCollide = function( shape1, shape2 )
 		        {
+		    	
+		    	alert("asdasd");
+		    	
 		        // These are the two bodies…
 		        //
 		        var cBody1 = shape1.m_body;
@@ -1876,7 +1879,7 @@ setTimeout(function(){
 		        var jellyObject1 = cBody1.GetUserData();
 		        var jellyObject2 = cBody2.GetUserData();
 
-
+		        
 		        // This is the code from the default collision filter
 		        //
 		        if (shape1.m_groupIndex == shape2.m_groupIndex && shape1.m_groupIndex != 0)
