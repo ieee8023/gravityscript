@@ -1867,7 +1867,11 @@ setTimeout(function(){
 		    this.ShouldCollide = function( shape1, shape2 )
 		        {
 		    	
-		    	alert("asdasd");
+		    	console.log("col");
+		    	
+		    	console.log(shape1);
+		    	
+		    	console.log(shape2);
 		    	
 		        // These are the two bodies…
 		        //
