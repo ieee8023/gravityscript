@@ -1848,6 +1848,23 @@ setTimeout(function(){
 
 				}
 				
+				var listener = new Box2D.Dynamics.b2ContactListener;
+				listener.BeginContact = function(contact) {
+			    	alert("asdas");
+			        // console.log(contact.GetFixtureA().GetBody().GetUserData());
+			    }
+			    listener.EndContact = function(contact) {
+			        // console.log(contact.GetFixtureA().GetBody().GetUserData());
+			    }
+			    listener.PostSolve = function(contact, impulse) {
+			        
+			    }
+			    listener.PreSolve = function(contact, oldManifold) {
+			
+			    }
+			    this.world.SetContactListener(listener);
+							
+				
 				
 			}
 
