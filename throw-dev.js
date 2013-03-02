@@ -1897,7 +1897,7 @@ setTimeout(function(){
 		        // if they defined an impact function
 		        if (impact){
 		        	
-		        	impact (jellyObject1, jellyObject2);
+		        	impact (jellyObject1.element, jellyObject2.element);
 		        }
 		        
 		        
