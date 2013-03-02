@@ -1876,7 +1876,7 @@ setTimeout(function(){
 		        var jellyObject2 = cBody2.GetUserData();
 		        
 		        // if they defined an impact function
-		        if(impact)
+		        if(typeof impact == 'function')
 			        if (jellyObject1 && jellyObject2){
 			        	
 			        	impact (jellyObject1, jellyObject2);
