@@ -1857,11 +1857,9 @@ setTimeout(function(){
 				
 			}
 
-			
-			
-			
-			var JellyCollisionCallback = function()
-		    {
+				
+			function JellyCollisionCallback(){
+				
 		    // Required function - this is the function the gets called when b2ContactManager registers a collision between two bodies
 		    //
 		    this.ShouldCollide = function( shape1, shape2 )
@@ -1880,19 +1878,12 @@ setTimeout(function(){
 		        
 		        // This is the code from the default collision filter
 		        //
-		        if (shape1.m_groupIndex == shape2.m_groupIndex && shape1.m_groupIndex != 0)
-		            {
+		        if (shape1.m_groupIndex == shape2.m_groupIndex && shape1.m_groupIndex != 0) {
 		            return shape1.m_groupIndex > 0;
-		            }
+		        }
 
 		        var collide = (shape1.m_maskBits & shape2.m_categoryBits) != 0 && (shape1.m_categoryBits & shape2.m_maskBits) != 0;
 
-		        
-		        console.log("col");
-		    	
-		    	//console.log(jellyObject1);
-		    	
-		    	//console.log(jellyObject2);
 		        
 		        // if they defined an impact function
 		        if (impact && jellyObject1.element && jellyObject2.element){
