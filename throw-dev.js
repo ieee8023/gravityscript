@@ -1874,6 +1874,12 @@ setTimeout(function(){
 		        //
 		        var jellyObject1 = cBody1.GetUserData();
 		        var jellyObject2 = cBody2.GetUserData();
+		        
+		        // if they defined an impact function
+		        if (impact && jellyObject1 && jellyObject2){
+		        	
+		        	impact (jellyObject1, jellyObject2);
+		        }
 
 		        
 		        // This is the code from the default collision filter
@@ -1884,14 +1890,7 @@ setTimeout(function(){
 
 		        var collide = (shape1.m_maskBits & shape2.m_categoryBits) != 0 && (shape1.m_categoryBits & shape2.m_maskBits) != 0;
 
-		        
-		        // if they defined an impact function
-		        if (impact && jellyObject1.element && jellyObject2.element){
-		        	
-		        	impact (jellyObject1.element, jellyObject2.element);
-		        }
-		        
-		        
+
 		        return collide;
 		        }
 
@@ -2106,7 +2105,7 @@ setTimeout(function(){
 				var boxBd = new b2BodyDef();
 				boxBd.AddShape(boxSd);
 				boxBd.position.Set(x,y);
-				boxBd.userData = {element: element};
+				boxBd.userData = element;
 
 				return world.CreateBody(boxBd)
 			}
