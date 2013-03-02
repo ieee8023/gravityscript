@@ -1867,12 +1867,6 @@ setTimeout(function(){
 		    this.ShouldCollide = function( shape1, shape2 )
 		        {
 		    	
-		    	console.log("col");
-		    	
-		    	console.log(shape1);
-		    	
-		    	console.log(shape2);
-		    	
 		        // These are the two bodies…
 		        //
 		        var cBody1 = shape1.m_body;
@@ -1896,6 +1890,15 @@ setTimeout(function(){
 		        return collide;
 		        }
 
+		    
+		    console.log("col");
+	    	
+	    	console.log(jellyObject1);
+	    	
+	    	console.log(jellyObject2);
+		    
+		    
+		    
 		    return this;
 		    }
 			
