@@ -1890,9 +1890,15 @@ setTimeout(function(){
 		        
 		        console.log("col");
 		    	
-		    	console.log(jellyObject1);
+		    	//console.log(jellyObject1);
 		    	
-		    	console.log(jellyObject2);
+		    	//console.log(jellyObject2);
+		        
+		        // if they defined an impact function
+		        if (impact){
+		        	
+		        	impact (jellyObject1, jellyObject2);
+		        }
 		        
 		        
 		        return collide;
