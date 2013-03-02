@@ -1800,7 +1800,7 @@ setTimeout(function(){
 					element.addEventListener( 'mouseup', onElementMouseUp, false );
 					element.addEventListener( 'click', onElementClick, false );
 
-					bodies[i] = createBox( world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false );
+					bodies[i] = createBox( world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false, element);
 
 					// Clean position dependencies
 
@@ -1836,7 +1836,7 @@ setTimeout(function(){
 					element.addEventListener( 'click', onElementClick, false );
 
 					// like walls   = createBox(world, stage[2] / 2, - wall_thickness, stage[2], wall_thickness);
-					solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, solidproperties[i][3] / 2, true);		
+					solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, solidproperties[i][3] / 2, true, element);		
 
 					// Clean position dependencies
 
