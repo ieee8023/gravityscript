@@ -1747,6 +1747,7 @@ setTimeout(function(){
 
 			grav();
 			init();
+			run();
 			},1000);
 
 
@@ -1799,7 +1800,7 @@ setTimeout(function(){
 					element.addEventListener( 'mouseup', onElementMouseUp, false );
 					element.addEventListener( 'click', onElementClick, false );
 
-					bodies[i] = createBox( world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false );
+					bodies[i] = createBox( world, properties[i][0] + (properties[i][2] >> 1), properties[i][1] + (properties[i][3] >> 1), properties[i][2] / 2, properties[i][3] / 2, false, element);
 
 					// Clean position dependencies
 
@@ -1835,7 +1836,7 @@ setTimeout(function(){
 					element.addEventListener( 'click', onElementClick, false );
 
 					// like walls   = createBox(world, stage[2] / 2, - wall_thickness, stage[2], wall_thickness);
-					solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, solidproperties[i][3] / 2, true);		
+					solids[i] = createBox(world, solidproperties[i][0] + (solidproperties[i][2] >> 1), solidproperties[i][1] + (solidproperties[i][3] >> 1), solidproperties[i][2] / 2, solidproperties[i][3] / 2, true, element);		
 
 					// Clean position dependencies
 
@@ -1847,27 +1848,64 @@ setTimeout(function(){
 					}
 
 				}
-				
-				var listener = new Box2D.Dynamics.b2ContactListener;
-				listener.BeginContact = function(contact) {
-			    	alert("asdas");
-			        // console.log(contact.GetFixtureA().GetBody().GetUserData());
-			    }
-			    listener.EndContact = function(contact) {
-			        // console.log(contact.GetFixtureA().GetBody().GetUserData());
-			    }
-			    listener.PostSolve = function(contact, impulse) {
-			        
-			    }
-			    listener.PreSolve = function(contact, oldManifold) {
-			
-			    }
-			    this.world.SetContactListener(listener);
 							
+				
+				myCollisionCallback = new JellyCollisionCallback();
+
+			    world.SetFilter(myCollisionCallback );
 				
 				
 			}
 
+				
+			function JellyCollisionCallback(){
+				
+		    // Required function - this is the function the gets called when b2ContactManager registers a collision between two bodies
+		    //
+		    this.ShouldCollide = function( shape1, shape2 )
+		        {
+		    	
+		        // These are the two bodiesÉ
+		        //
+		        var cBody1 = shape1.m_body;
+		        var cBody2 = shape2.m_body;
+
+		        // I'm setting userData when I create the body object
+		        //
+		        var jellyObject1 = cBody1.GetUserData();
+		        var jellyObject2 = cBody2.GetUserData();
+		        
+		        // if they defined an impact function
+		        if (impact && jellyObject1 && jellyObject2){
+		        	
+		        	impact (jellyObject1, jellyObject2);
+		        }
+
+		        
+		        // This is the code from the default collision filter
+		        //
+		        if (shape1.m_groupIndex == shape2.m_groupIndex && shape1.m_groupIndex != 0) {
+		            return shape1.m_groupIndex > 0;
+		        }
+
+		        var collide = (shape1.m_maskBits & shape2.m_categoryBits) != 0 && (shape1.m_categoryBits & shape2.m_maskBits) != 0;
+
+
+		        return collide;
+		        }
+
+		    
+		    
+		    
+		    
+		    
+		    return this;
+		    }
+			
+			
+			
+			
+			
 			function run() {
 
 				isRunning = true;
@@ -2067,7 +2105,7 @@ setTimeout(function(){
 				var boxBd = new b2BodyDef();
 				boxBd.AddShape(boxSd);
 				boxBd.position.Set(x,y);
-				boxBd.userData = {element: element};
+				boxBd.userData = element;
 
 				return world.CreateBody(boxBd)
 			}
