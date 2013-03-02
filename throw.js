@@ -1876,10 +1876,11 @@ setTimeout(function(){
 		        var jellyObject2 = cBody2.GetUserData();
 		        
 		        // if they defined an impact function
-		        if (impact && jellyObject1 && jellyObject2){
-		        	
-		        	impact (jellyObject1, jellyObject2);
-		        }
+		        if(typeof impact == 'function')
+			        if (jellyObject1 && jellyObject2){
+			        	
+			        	impact (jellyObject1, jellyObject2);
+			        }
 
 		        
 		        // This is the code from the default collision filter
