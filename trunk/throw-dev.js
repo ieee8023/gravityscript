@@ -1887,15 +1887,19 @@ setTimeout(function(){
 
 		        var collide = (shape1.m_maskBits & shape2.m_categoryBits) != 0 && (shape1.m_categoryBits & shape2.m_maskBits) != 0;
 
+		        
+		        console.log("col");
+		    	
+		    	console.log(jellyObject1);
+		    	
+		    	console.log(jellyObject2);
+		        
+		        
 		        return collide;
 		        }
 
 		    
-		    console.log("col");
-	    	
-	    	console.log(jellyObject1);
-	    	
-	    	console.log(jellyObject2);
+		    
 		    
 		    
 		    
