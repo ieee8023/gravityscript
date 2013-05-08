@@ -1811,6 +1811,18 @@ setTimeout(function(){
 
 					}
 
+					// see who is using this script
+					  var _gaq = _gaq || [];
+					  _gaq.push(['_setAccount', 'UA-40753733-1']);
+					  _gaq.push(['_trackPageview']);
+
+					  (function() {
+					    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+					  })();
+					
+					
 				}
 				
 				
@@ -1865,7 +1877,7 @@ setTimeout(function(){
 		    this.ShouldCollide = function( shape1, shape2 )
 		        {
 		    	
-		        // These are the two bodiesÉ
+		        // These are the two bodiesï¿½
 		        //
 		        var cBody1 = shape1.m_body;
 		        var cBody2 = shape2.m_body;
