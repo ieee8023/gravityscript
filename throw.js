@@ -1814,6 +1814,7 @@ setTimeout(function(){
 					// see who is using this script
 					  var _gaq = _gaq || [];
 					  _gaq.push(['_setAccount', 'UA-40753733-1']);
+					  _gaq.push(['_setAllowLinker', true]);
 					  _gaq.push(['_trackPageview']);
 
 					  (function() {
